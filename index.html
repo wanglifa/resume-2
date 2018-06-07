@@ -4,6 +4,15 @@
 	<meta charset="UTF-8">
 	<title>我的网页简历</title>
 	<link rel="stylesheet" href="./a.css">
+	<script src="//at.alicdn.com/t/font_699145_kwuzdbfy0jurf6r.js"></script>
+	<style type="text/css">
+		.icon {
+		   width: 1em; height: 1em;
+		   vertical-align: -0.15em;
+		   fill: currentColor;
+		   overflow: hidden;
+		}
+	</style>
 </head>
 <body>
 
@@ -21,42 +30,57 @@
 				<li><a href="#">日历</a></li>
 				<li><a href="#">联系方式</a></li>
 				<li><a href="#">其他</a></li>
-			    <li><a href="">ALL DEMOS</a></li>
 			</ul>
 		</nav>
 	</div>
-	<div class="banner" style="background-image: url(#)"></div>
+	<div class="banner">
+		<div class="mask"></div>
+	</div>
 	<main>
-		<div class="card">
-			<div class="picture">
-				<img src="" alt="头像">
-			</div>
-			<div class="text">
-				<div class="profile">
-					<span class="welcome">Hello</span>
-					<h1>王立发</h1>
-					<p>前端开发工程师</p>
-					<hr>
-					<dl>
-						<dt>年龄</dt>
-						<dd>23</dd>
-						<dt>所在城市</dt>
-						<dd>青岛</dd>
-						<dt>邮箱</dt>
-						<dd>1002325418@qq.com</dd>
-						<dt>手机</dt>
-						<dd>15806553882</dd>
-					</dl>
+		<div class="userCard">
+				<div class="userCard_head clearfix">
+					<div class="picture">
+						<img src="./images/avatar.jpg" alt="头像">
+					</div>
+						<div class="text">
+							<span class="welcome">Hello
+								<div class="triangle"></div>		
+							</span>
+							<h1>王立发</h1>
+							<p>前端开发工程师</p>
+							<hr>
+							<dl class="clearfix">
+								<dt>年龄</dt>
+								<dd>23</dd>
+								<dt>所在城市</dt>
+								<dd>青岛</dd>
+								<dt>邮箱</dt>
+								<dd>1002325418@qq.com</dd>
+								<dt>手机</dt>
+								<dd>15806553882</dd>
+							</dl>
+						</div>
 				</div>
 				<footer class="media">
 					<a href="">
-						<img src="" alt="">
-						<img src="" alt="">
-						<img src="" alt="">
-						<img src="" alt="">
-						<img src="" alt="">
-						<img src="" alt="">
-						<img src="" alt="">
+						<svg class="icon" aria-hidden="true">
+							<use xlink:href="#icon-github"></use>
+						</svg>
+					</a><a href="">
+					
+						<svg class="icon" aria-hidden="true">
+							<use xlink:href="#icon-zhihu"></use>
+						</svg>
+					</a><a href="">
+					
+						<svg class="icon" aria-hidden="true">
+							<use xlink:href="#icon-twitter"></use>
+						</svg>
+					</a><a href="">
+					
+						<svg class="icon" aria-hidden="true">
+							<use xlink:href="#icon-weixin"></use>
+						</svg>
 					</a>
 				</footer>
 			</div>

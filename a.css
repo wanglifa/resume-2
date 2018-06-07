@@ -19,6 +19,12 @@ body{
 /*顶部导航*/
 .topNavBar{
     padding: 30px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    margin-bottom: 40px;
 }
 .topNavBar .logo{
     font-family: 'Hiragino Kaku Gothic Std';
@@ -53,4 +59,104 @@ body{
 }
 .topNavBar nav li:hover a{
     border-bottom: 3px solid #DC6465;
+}
+
+/*banner*/
+.banner{
+    background: url(./images/rs-cover-2-2-1-1.jpg) center no-repeat;
+    height: 515px;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.mask{
+    background: rgba(0,0,0,0.7);
+    height: 100%;
+    width: 100%;
+}
+
+.userCard{
+    max-width: 940px;
+    margin: 0 auto;
+    color: #666;
+    box-sizing: border-box;
+    position: relative;
+    padding-top: 200px;
+}
+.userCard_head{
+    background-color: #fff;
+    padding: 57px 50px 15px 50px;
+}
+.welcome{
+    background-color: #e8676b;
+    color: #fff;
+    padding: 5px 15px;
+    line-height: 21px;
+    display: inline-block;
+    position: relative;
+    margin-bottom: 20px;
+}
+.welcome .triangle{
+    border: 6px solid #e8676b;
+    width: 0;
+    height: 0; 
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+    position: absolute;
+    top: 100%;
+    left: 10px;
+}
+.picture,.text{
+    float: left;
+}
+.picture{
+    max-width: 300px;
+}
+.text{
+    margin-left: 50px;
+    width: 490px;
+}
+.welcome+h1{
+    margin-bottom: 6px;
+}
+.welcome+h1+p+hr{
+    border: 0;
+    border-top: 1px solid #dedede;
+    margin-top: 25px;
+}
+.text dl{
+    padding-top: 25px;
+}
+.text dl dt,.text dl dd{
+    float: left;
+    padding: 6px 0;
+}
+.text dl dt{
+    width: 30%;
+    font-weight: 600;
+}
+.text dl dd{
+    width: 70%;
+    color: #999;
+}
+.media{
+    background-color: #e8676b;
+    text-align: center;
+    padding: 15px 0;
+}
+.media svg{
+    fill: #fff;
+    width: 30px;
+    height: 30px;
+}
+.media a{
+    display: inline-block;
+    padding: 10px;
+    margin: 0 10px;
+}
+.media a:hover{
+    border-radius: 50%;
+    background-color: rgba(208,92,96,1);
 }
