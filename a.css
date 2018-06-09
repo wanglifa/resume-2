@@ -18,7 +18,7 @@ body{
 
 /*顶部导航*/
 .topNavBar{
-    padding: 30px 0;
+    padding: 20px 0;
     position: fixed;
     top: 0;
     left: 0;
@@ -27,8 +27,8 @@ body{
     margin-bottom: 40px;
 }
 .topNavBar .logo{
-    font-family: 'Hiragino Kaku Gothic Std';
-    font-size: 30px;
+    font-family: 'Arial Black';
+    font-size: 24px;
     padding: 4px 0 4px 15px;
     font-weight: 600;
 }
@@ -56,6 +56,7 @@ body{
     padding: 12px 0;
     box-sizing: border-box;
     border-bottom: 3px solid transparent;
+    font-size: 12px;
 }
 .topNavBar nav li:hover a{
     border-bottom: 3px solid #DC6465;
@@ -120,6 +121,7 @@ body{
 }
 .welcome+h1{
     margin-bottom: 6px;
+    color: #333;
 }
 .welcome+h1+p+hr{
     border: 0;
@@ -136,6 +138,7 @@ body{
 .text dl dt{
     width: 30%;
     font-weight: 600;
+    color: #333333;
 }
 .text dl dd{
     width: 70%;
