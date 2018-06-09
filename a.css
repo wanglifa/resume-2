@@ -134,6 +134,7 @@ body{
 .text dl dt,.text dl dd{
     float: left;
     padding: 6px 0;
+    line-height: 21px;
 }
 .text dl dt{
     width: 30%;
