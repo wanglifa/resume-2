@@ -85,37 +85,80 @@
 				</footer>
 			</div>
 		</div>
-		<a class="button" href="">下载pdf简历</a>
+		<p>
+			<a href="" class="button">下载pdf简历</a>
+		</p>
 		<p> 王立发，前端工程师。<br>
 			技能：前端开发，Node.js开发
 		</p>
 	</main> 
-	<section>
+	<section class="skills">
 		<h2>技能</h2>
-		<ol>
-			<li>HTML5 &amp; css3</li>
-			<li>Javascript</li>
-			<li>Jquery</li>
-			<li>Vue</li>
-			<li>React</li>
-			<li>HTTP</li>
+		<ol class="clearfix">
+			<li>
+				<h3>HTML5 &amp; CSS3</h3>
+				<div class="progressBar"></div>
+			</li>
+			<li>
+				<h3>JavaScript</h3>
+				<div class="progressBar"></div>
+			</li>
+			<li>
+				<h3>JQuery</h3>
+				<div class="progressBar"></div>
+			</li>
+			<li>
+				<h3>Vue.js</h3>
+				<div class="progressBar"></div>
+			</li>
+			<li>
+				<h3>React.js</h3>
+				<div class="progressBar"></div>
+			</li>
+			<li>
+				<h3>Node.js</h3>
+				<div class="progressBar"></div>
+			</li>
 		</ol>	
 	</section>
-	<section>
+	<section class="portfolio">
 		<h2>作品集</h2>
-		<nav>
-			<ol>
-				<li>所有</li>
-				<li>框架</li>
-				<li>原生JS&ampl;CSS</li>
+		<nav id="protfo">
+			<ol class="clearfix">
+				<li id="1">所有</li>
+				<li id="2">框架</li>
+				<li id="3">原生JS&ampl;CSS</li>
 			</ol>
+			<div class="bar status-1" id="bar">
+				<div class="bar-inner"></div>
+			</div>
 		</nav>
-		<div class="jobs">
-			<div class="bog"></div>
-			<div class="small"></div>
-			<div class="small"></div>
+		<div class="works" style="height: 597px">
+			<div class="big">
+				<img src="./images/1.jpg" alt="作品1">
+			</div>
+			<div class="small" style="top: 0;left: 637px">
+				<img src="./images/2.jpg" alt="作品2">
+			</div>
+			<div class="small" style="top: 312px;left: 637px;">
+				<img src="./images/3.jpg" alt="作品3">
+			</div>
 		</div>
 	</section>
 </body>
+<script>
+function $(id) {
+	return document.getElementById(id);
+}
 
+$("1").onmouseenter = function (ev) {
+	$("bar").className = "bar status-1";
+}
+$("2").onmouseenter = function (ev) {
+    $("bar").className = "bar status-2";
+}
+$("3").onmouseenter = function (ev) {
+    $("bar").className = "bar status-3";
+}
+</script>
 </html>

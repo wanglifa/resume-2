@@ -11,8 +11,8 @@
     clear: both;
 }
 body{
-    background: black;
-    color: #fff;
+    background: #efefef;
+    color: #333;
     font-family: '微软雅黑',Arial, Helvetica, sans-serif;
 }
 
@@ -67,9 +67,6 @@ body{
     background: url(./images/rs-cover-2-2-1-1.jpg) center no-repeat;
     height: 515px;
     background-size: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
 }
 .mask{
@@ -84,7 +81,10 @@ body{
     color: #666;
     box-sizing: border-box;
     position: relative;
-    padding-top: 200px;
+    margin-top: -350px;
+    -webkit-box-shadow:  0 1px 6px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow:  0 1px 6px rgba(0, 0, 0, 0.3);
+    box-shadow:  0 1px 6px rgba(0, 0, 0, 0.3);
 }
 .userCard_head{
     background-color: #fff;
@@ -163,4 +163,153 @@ body{
 .media a:hover{
     border-radius: 50%;
     background-color: rgba(208,92,96,1);
+}
+.button{
+    padding: 21px 55px;
+    border: 1px solid #cbcdcf;
+    color: #3d4451;
+    border-radius: 3px;
+    display: inline-block;
+}
+.userCard+p,.userCard+p+p{
+    text-align: center;
+    max-width: 940px;
+    margin: 0 auto;
+}
+.userCard+p{
+    margin: 30px auto 25px;
+}
+.userCard+p > a{
+    transition: all .3s linear;
+    cursor: pointer;
+}
+.userCard+p > a:hover{
+    -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18);
+    -moz-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18);
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18);
+}
+.userCard+p+p{
+    font-family: '楷体';
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+section{
+    max-width: 940px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 50px;
+}
+section>h2{
+    color: #3d4451;
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+.skills > ol{
+    background: #fff;
+    -webkit-box-shadow:  0 1px 4px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    box-shadow:  0 1px 4px rgba(0, 0, 0, 0.3);
+    padding: 40px 50px;
+}
+.skills>ol li{
+    float: left;
+    width: 48%;
+    text-align: left;
+    margin-bottom: 40px;
+}
+.skills>ol li:nth-child(2n+2){
+    float: right;
+}
+.skills>ol li h3{
+    font-size: 14px;
+    font-weight: normal;
+    color: #666;
+    margin-bottom: 6px;
+}
+.progressBar{
+    width: 100%;
+    height: 5px;
+    background: #FAE0E0;
+    position: relative;
+}
+.progressBar::before{
+    content: '';
+    height: 100%;
+    width: 60%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #E8676B;
+}
+.skills>ol li:nth-child(2) .progressBar::before{
+    width: 70%;
+}
+.skills>ol li:nth-child(3) .progressBar::before{
+    width: 50%;
+}
+.skills>ol li:nth-child(4) .progressBar::before{
+    width: 75%;
+}
+.skills>ol li:nth-child(5) .progressBar::before{
+    width: 40%;
+}
+.skills>ol li:nth-child(6) .progressBar::before{
+    width: 35%;
+}
+.skills>ol li:nth-child(5),.skills>ol li:last-child{
+    margin-bottom: 0;
+}
+section.portfolio >nav{
+    margin: 0 auto;
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+    cursor: pointer;
+}
+section.portfolio >nav li{
+    margin-left: 40px;
+}
+section.portfolio >nav ol{
+    padding: 0 20px;
+}
+section.portfolio >nav li:first-child{
+    margin-left: 0;
+}
+.portfolio .bar{
+    height: 5px;
+    background: #fff;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    margin-bottom: 40px;
+    margin-top: 5px;
+}
+.portfolio .bar-inner{
+    height: 100%;
+    background: #e6686a;
+    width: 10%;
+    border-radius: 2px;
+    transition: all .3s linear;
+}
+.bar.status-1 .bar-inner{
+    margin-left: 0;
+    width: 74px;
+}
+.bar.status-2 .bar-inner{
+    margin-left: 74px;
+    width: 74px;
+}
+.bar.status-3 .bar-inner{
+    margin-left: 148px;
+    width: 135px;
+}
+.works{
+    position: relative;
+    margin-bottom: 100px;
+}
+.works .big,.works .small{
+    position: absolute;
+    top: 0;
+    left: 0;
 }
