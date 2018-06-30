@@ -3,7 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>我的网页简历</title>
-	<link rel="stylesheet" href="./a.css">
+	<link rel="stylesheet" href="./loading.css">
+	<link rel="stylesheet" href="./main.css">
 	<script src="//at.alicdn.com/t/font_699145_kwuzdbfy0jurf6r.js"></script>
 	<style type="text/css">
 		.icon {
@@ -12,12 +13,20 @@
 		   fill: currentColor;
 		   overflow: hidden;
 		}
+		.start-welcome{
+			display: none;
+		}
+		.start-welcome.active{
+			display: block;
+		}
 	</style>
 </head>
 <body>
 
-
-	<div class="topNavBar clearfix">
+	<div class="start-welcome active" id="start-welcome">
+		<div class="loading"></div>
+	  </div>
+	<div class="topNavBar clearfix" id="topNavBar">
 		<a class="logo" href="#" alt="logo" style="float: left; ">
 			<span class="rs">RS</span><span class="card">card</span>
 		  </a>
@@ -159,6 +168,16 @@ $("2").onmouseenter = function (ev) {
 }
 $("3").onmouseenter = function (ev) {
     $("bar").className = "bar status-3";
+}
+setTimeout(function(){
+	$("start-welcome").classList.remove('active');
+},1000)//1s后移除active类
+window.onscroll = function(){
+	if(window.scrollY>0){
+		$("topNavBar").classList.add('static');
+	}else{
+		$('topNavBar').classList.remove('static');
+	}
 }
 </script>
 </html>
