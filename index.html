@@ -32,13 +32,37 @@
 		  </a>
 		<nav>
 			<ul class="clearfix">
-				<li><a href="#">关于</a></li>
-				<li><a href="#">技能</a></li>
-				<li><a href="#">作品</a></li>
-				<li><a href="#">博客</a></li>
-				<li><a href="#">日历</a></li>
-				<li><a href="#">联系方式</a></li>
-				<li><a href="#">其他</a></li>
+				<li>
+					<a href="#sitAbout">关于</a>
+				</li>
+				<li>
+					<a href="#sitSkill">技能</a>
+				</li>
+				<li class="menuTigger">
+					<a href="#sitProduct">作品</a>
+					<ul class="submenu">
+						<li>作品1</li>
+						<li>作品2</li>
+						<li>作品3</li>
+					</ul>		
+				</li>
+				<li class="menuTigger">
+					<a href="" >博客</a>
+					<ul class="submenu">
+						<li>博客1</li>
+						<li>博客2</li>
+						<li>博客3</li>
+					</ul>	
+				</li>
+				<li>
+					<a href="#">日历</a>
+				</li>
+				<li>
+					<a href="#">联系方式</a>
+				</li>
+				<li>
+					<a href="#">其他</a>
+				</li>
 			</ul>
 		</nav>
 	</div>
@@ -46,7 +70,7 @@
 		<div class="mask"></div>
 	</div>
 	<main>
-		<div class="userCard">
+		<div class="userCard" id="sitAbout">
 				<div class="userCard_head clearfix">
 					<div class="picture">
 						<img src="./images/avatar.jpg" alt="头像">
@@ -101,7 +125,7 @@
 			技能：前端开发，Node.js开发
 		</p>
 	</main> 
-	<section class="skills">
+	<section class="skills" id="sitSkill">
 		<h2>技能</h2>
 		<ol class="clearfix">
 			<li>
@@ -130,7 +154,7 @@
 			</li>
 		</ol>	
 	</section>
-	<section class="portfolio">
+	<section class="portfolio" id="sitProduct">
 		<h2>作品集</h2>
 		<nav id="protfo">
 			<ol class="clearfix">
@@ -177,6 +201,28 @@ window.onscroll = function(){
 		$("topNavBar").classList.add('static');
 	}else{
 		$('topNavBar').classList.remove('static');
+	}
+}
+var tags = document.getElementsByClassName('menuTigger');
+for(var i =0;i<tags.length;i++){
+	tags[i].onmouseenter  = function(x){
+		var ul = this.getElementsByTagName('ul')[0];
+		ul.classList.add('active');
+	}
+	tags[i].onmouseleave = function(){
+		var ul = this.getElementsByTagName('ul')[0];
+		ul.classList.remove('active');
+	}
+}
+var atags = document.querySelectorAll('nav li a');
+for(var i =0;i<atags.length;i++){
+	atags[i].onclick = function(x){
+		var a = x.currentTarget;
+		x.preventDefault();
+		var href = a.getAttribute('href');
+		var element = document.querySelector(href);
+		var top = element.offsetTop;
+		window.scrollTo(0,top-60);
 	}
 }
 </script>
