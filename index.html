@@ -70,7 +70,7 @@
 		<div class="mask"></div>
 	</div>
 	<main>
-		<div class="userCard" id="sitAbout">
+		<div data-x class="userCard offset" id="sitAbout">
 				<div class="userCard_head clearfix">
 					<div class="picture">
 						<img src="./images/avatar.jpg" alt="头像">
@@ -125,7 +125,7 @@
 			技能：前端开发，Node.js开发
 		</p>
 	</main> 
-	<section class="skills" id="sitSkill">
+	<section data-x class="skills offset" id="sitSkill">
 		<h2>技能</h2>
 		<ol class="clearfix">
 			<li>
@@ -154,7 +154,7 @@
 			</li>
 		</ol>	
 	</section>
-	<section class="portfolio" id="sitProduct">
+	<section data-x class="portfolio offset" id="sitProduct">
 		<h2>作品集</h2>
 		<nav id="protfo">
 			<ol class="clearfix">
@@ -196,13 +196,39 @@ $("3").onmouseenter = function (ev) {
 }
 setTimeout(function(){
 	$("start-welcome").classList.remove('active');
-},1000)//1s后移除active类
+},100)//1s后移除active类
+window.setTimeout(function(){
+	findCloset();
+},100)
 window.onscroll = function(){
 	if(window.scrollY>0){
 		$("topNavBar").classList.add('static');
 	}else{
 		$('topNavBar').classList.remove('static');
 	}
+	findCloset();
+	
+}
+function findCloset(){
+	var specialTags = document.querySelectorAll('[data-x]');
+	var minIndex = 0;//给出一个最小差值的索引号（对应的目标位置距顶部的距离减去滚动条易动的距离），从0开始，因为可以依次往后遍历进行比较。
+	//因为上面给出的最小值索引是0，所以下面遍历从1开始与第0个开始比较
+	for(var i =1;i<specialTags.length;i++){
+		//对应的目标位置距顶部距离减去滚动条滚动的距离的绝对值差值越小，说明约接近目标位置
+		if(Math.abs(specialTags[i].offsetTop-window.scrollY)< Math.abs(specialTags[minIndex].offsetTop-window.scrollY)){
+			minIndex = i;
+		}
+		
+	}
+	specialTags[minIndex].classList.remove('offset');
+	var id = specialTags[minIndex].id;
+	console.log(id)
+	var a = document.querySelector('a[href="#'+id+'"]');
+	var aParent = a.parentNode.parentNode.children;
+	for(var i =0;i<aParent.length;i++){
+		aParent[i].classList.remove('active');
+	}
+	a.parentNode.classList.add('active');
 }
 var tags = document.getElementsByClassName('menuTigger');
 for(var i =0;i<tags.length;i++){
@@ -227,7 +253,8 @@ for(var i =0;i<atags.length;i++){
 		// var t = 500/n;
 		var currentTop = window.scrollY;
 		var targetTop = top-60;
-		var t = Math.abs((targetTop-currentTop)/100*300);
+		var t = Math.abs((targetTop-currentTop)/100*300);//因为每个目标位置的高度不一样，为了保持时间和速度协调起来，
+		//所以设置一个每100px的距离用300ms，然后得到目标距离里有几个100用它乘以300，又因为如果是从下边跑到上边的话它的值就会是负值，会出问题，所以用设置绝对值
 		if(t>1500){
 			t=1500;
 		}

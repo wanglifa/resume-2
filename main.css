@@ -15,7 +15,13 @@ body{
     color: #333;
     font-family: '微软雅黑',Arial, Helvetica, sans-serif;
 }
-
+[data-x].offset{
+    transform: translateY(100px)
+}
+[data-x]{
+    transform: translateY(0);
+    transition: all .3s linear;
+}
 /*顶部导航*/
 .topNavBar{
     padding: 20px 0;
@@ -74,7 +80,7 @@ body{
     transition: all .3s linear;
     position: relative;
 }
-.topNavBar nav li a::after{
+.topNavBar nav li a::after,.topNavBar nav li.active a::after{
     content: '';
     display: block;
     width: 0;
@@ -84,7 +90,7 @@ body{
     top: 100%;
     transition: all .3s linear;
 }
-.topNavBar nav li:hover a::after{
+.topNavBar nav li:hover a::after,.topNavBar nav li.active a::after{
     width: 100%;
 }
 .submenu{
