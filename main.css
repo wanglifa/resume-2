@@ -64,7 +64,7 @@ body{
 .topNavBar nav{
     float: right;
 }
-.topNavBar nav li{
+.topNavBar nav>ul>li{
     margin: 0 17px;
     transition: all .3s linear;
     position: relative;
@@ -262,61 +262,24 @@ section>h2{
     font-size: 28px;
     margin-bottom: 25px;
 }
-.skills > ol{
-    background: #fff;
-    -webkit-box-shadow:  0 1px 4px rgba(0, 0, 0, 0.3);
-    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
-    box-shadow:  0 1px 4px rgba(0, 0, 0, 0.3);
-    padding: 40px 50px;
+
+section.skills,
+section.portfolio{ max-width: 940px; margin-left: auto; margin-right: auto; margin-top: 60px; }
+section.skills > h2 ,
+section.portfolio > h2 { text-align: center; color: #3d4451; font-size: 34px; line-height: 1.2; font-weight: 600; }
+section.skills h3 { font-size: 14px; line-height: 1.1; padding-right: 40px; }
+section.skills > ol { background: white; box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.5); padding: 42px 50px 10px; margin-top: 30px; }
+section.skills > ol > li { float: left; width: 48%; box-sizing: border-box; }
+section.skills > ol > li:nth-child(even) { float: right; } 
+section.skills .progressBar { height: 5px; background: #FAE1E1; 
+border-radius: 2px; margin: 4px 0 40px; overflow: hidden; }
+section.skills .progressBar > .progress { height: 100%; background: #E6686A; 
+width: 70%; border-radius: 2px; transform: translateX(0); transition: all 1s; }
+section.skills.offset .progress{
+  transform: translateX(-100%);
 }
-.skills>ol li{
-    float: left;
-    width: 48%;
-    text-align: left;
-    margin-bottom: 40px;
-}
-.skills>ol li:nth-child(2n+2){
-    float: right;
-}
-.skills>ol li h3{
-    font-size: 14px;
-    font-weight: normal;
-    color: #666;
-    margin-bottom: 6px;
-}
-.progressBar{
-    width: 100%;
-    height: 5px;
-    background: #FAE0E0;
-    position: relative;
-}
-.progressBar::before{
-    content: '';
-    height: 100%;
-    width: 60%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: #E8676B;
-}
-.skills>ol li:nth-child(2) .progressBar::before{
-    width: 70%;
-}
-.skills>ol li:nth-child(3) .progressBar::before{
-    width: 50%;
-}
-.skills>ol li:nth-child(4) .progressBar::before{
-    width: 75%;
-}
-.skills>ol li:nth-child(5) .progressBar::before{
-    width: 40%;
-}
-.skills>ol li:nth-child(6) .progressBar::before{
-    width: 35%;
-}
-.skills>ol li:nth-child(5),.skills>ol li:last-child{
-    margin-bottom: 0;
-}
+
+
 section.portfolio >nav{
     margin: 0 auto;
     display: inline-block;
