@@ -333,3 +333,29 @@ section.portfolio >nav li:first-child{
     top: 0;
     left: 0;
 }
+.works .swiper-container{
+    width: 668px;
+    height: 501px;
+}
+.swiper-button-next, 
+.swiper-button-prev{
+    width: 64px;
+    height: 64px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+.swiper-container-horizontal>.swiper-pagination-bullets, 
+.swiper-pagination-custom, 
+.swiper-pagination-fraction{
+    bottom: 20px;
+}
+.swiper-pagination-bullet{
+    background: #fff;
+    opacity: .6;
+    width: 16px;
+    height: 16px;
+}
+.swiper-pagination-bullet-active{
+    background-color: #e6686a;
+    opacity: 1;
+}

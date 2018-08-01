@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>我的网页简历</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/css/swiper.min.css">
 	<link rel="stylesheet" href="./loading.css">
 	<link rel="stylesheet" href="./main.css">
 	<script src="//at.alicdn.com/t/font_699145_kwuzdbfy0jurf6r.js"></script>
@@ -190,19 +191,28 @@
 				<div class="bar-inner"></div>
 			</div>
 		</nav>
-		<div class="works" style="height: 597px">
-			<div class="big">
-				<img src="./images/1.jpg" alt="作品1">
+		<div class="works">
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+						<img class="swiper-slide" src="./images/works/nav-page.jpg">
+						<img class="swiper-slide" src="./images/works/canvas.jpg">
+						<img class="swiper-slide" src="./images/works/apple-style-slides.jpg">
+				</div>
+				<!-- 如果需要分页器 -->
+				<div class="swiper-pagination"></div>
+				
+				
+				
+				<!-- 如果需要滚动条 -->
+				<div class="swiper-scrollbar"></div>
 			</div>
-			<div class="small" style="top: 0;left: 637px">
-				<img src="./images/2.jpg" alt="作品2">
-			</div>
-			<div class="small" style="top: 312px;left: 637px;">
-				<img src="./images/3.jpg" alt="作品3">
-			</div>
+			<!-- 如果需要导航按钮 -->
+			<div class="swiper-button-prev"></div>
+			<div class="swiper-button-next"></div>
 		</div>
 	</section>
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/js/swiper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"></script>
 <script>
 function $(id) {
@@ -300,5 +310,21 @@ for(var i =0;i<atags.length;i++){
 			
 			}
 		}
+
+		var mySwiper = new Swiper ('.swiper-container', {
+    loop: true,
+    
+    // 如果需要分页器
+    pagination: {
+      el: '.swiper-pagination',
+    },
+    
+    // 如果需要前进后退按钮
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    }
+    
+  })        
 </script>
 </html>
