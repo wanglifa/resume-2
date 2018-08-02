@@ -22,6 +22,20 @@ body{
     transform: translateY(0);
     transition: all .3s linear;
 }
+/*icon*/
+.icon {
+    width: 1em; height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+ }
+ .start-welcome{
+     display: none;
+ }
+ .start-welcome.active{
+     display: block;
+ }
+
 /*顶部导航*/
 .topNavBar{
     padding: 20px 0;
