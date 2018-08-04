@@ -3,14 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<title>我的网页简历</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/css/swiper.min.css">
-	<link rel="stylesheet" href="./loading.css">
+	<link rel="stylesheet" href="swiper.min.css">
 	<link rel="stylesheet" href="./main.css">
 	<script src="//at.alicdn.com/t/font_699145_kwuzdbfy0jurf6r.js"></script>
 </head>
 <body>
 
-	<div class="start-welcome active" id="start-welcome">
+	<div class="start-welcome" id="start-welcome">
 		<div class="loading"></div>
 	  </div>
 	<div class="topNavBar clearfix" id="topNavBar">
@@ -167,7 +166,7 @@
 	</section>
 	<section data-x class="portfolio offset" id="sitProduct">
 		<h2>作品集</h2>
-		<nav id="protfo">
+		<!-- <nav id="protfo">
 			<ol class="clearfix">
 				<li id="1">所有</li>
 				<li id="2">框架</li>
@@ -176,8 +175,9 @@
 			<div class="bar status-1" id="bar">
 				<div class="bar-inner"></div>
 			</div>
-		</nav>
-		<div class="works">
+		</nav> -->
+		<!-- 这就是view，用户看得见的东西 -->
+		<div id="mySlides" class="works">
 			<div class="swiper-container">
 				<div class="swiper-wrapper">
 						<img class="swiper-slide" src="./images/works/nav-page.jpg">
@@ -198,119 +198,13 @@
 		</div>
 	</section>
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/js/swiper.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"></script>
-<script>
-function $(id) {
-	return document.getElementById(id);
-}
 
-$("1").onmouseenter = function (ev) {
-	$("bar").className = "bar status-1";
-}
-$("2").onmouseenter = function (ev) {
-    $("bar").className = "bar status-2";
-}
-$("3").onmouseenter = function (ev) {
-    $("bar").className = "bar status-3";
-}
-setTimeout(function(){
-	$("start-welcome").classList.remove('active');
-},100)//1s后移除active类
-window.setTimeout(function(){
-	findCloset();
-},100)
-window.onscroll = function(){
-	if(window.scrollY>0){
-		$("topNavBar").classList.add('static');
-	}else{
-		$('topNavBar').classList.remove('static');
-	}
-	findCloset();
-	
-}
-function findCloset(){
-	var specialTags = document.querySelectorAll('[data-x]');
-	var minIndex = 0;//给出一个最小差值的索引号（对应的目标位置距顶部的距离减去滚动条易动的距离），从0开始，因为可以依次往后遍历进行比较。
-	//因为上面给出的最小值索引是0，所以下面遍历从1开始与第0个开始比较
-	for(var i =1;i<specialTags.length;i++){
-		//对应的目标位置距顶部距离减去滚动条滚动的距离的绝对值差值越小，说明约接近目标位置
-		if(Math.abs(specialTags[i].offsetTop-window.scrollY)< Math.abs(specialTags[minIndex].offsetTop-window.scrollY)){
-			minIndex = i;
-		}
-		
-	}
-	specialTags[minIndex].classList.remove('offset');
-	var id = specialTags[minIndex].id;
-	console.log(id)
-	var a = document.querySelector('a[href="#'+id+'"]');
-	var aParent = a.parentNode.parentNode.children;
-	for(var i =0;i<aParent.length;i++){
-		aParent[i].classList.remove('active');
-	}
-	a.parentNode.classList.add('active');
-}
-var tags = document.getElementsByClassName('menuTigger');
-for(var i =0;i<tags.length;i++){
-	tags[i].onmouseenter  = function(x){
-		var ul = this.getElementsByTagName('ul')[0];
-		ul.classList.add('active');
-	}
-	tags[i].onmouseleave = function(){
-		var ul = this.getElementsByTagName('ul')[0];
-		ul.classList.remove('active');
-	}
-}
-var atags = document.querySelectorAll('nav li a');
-for(var i =0;i<atags.length;i++){
-	atags[i].onclick = function(x){
-		var a = x.currentTarget;
-		x.preventDefault();
-		var href = a.getAttribute('href');
-		var element = document.querySelector(href);
-		var top = element.offsetTop;
-		// var n =25;
-		// var t = 500/n;
-		var currentTop = window.scrollY;
-		var targetTop = top-60;
-		var t = Math.abs((targetTop-currentTop)/100*300);//因为每个目标位置的高度不一样，为了保持时间和速度协调起来，
-		//所以设置一个每100px的距离用300ms，然后得到目标距离里有几个100用它乘以300，又因为如果是从下边跑到上边的话它的值就会是负值，会出问题，所以用设置绝对值
-		if(t>1500){
-			t=1500;
-		}
-		function animate(time) {
-    		requestAnimationFrame(animate);
-    		TWEEN.update(time);
-		}
-		requestAnimationFrame(animate);
-
-		var coords = { y:currentTop }; 
-		var tween = new TWEEN.Tween(coords) 
-		        .to({ y:targetTop }, t) //t秒钟到达目标位置
-		        .easing(TWEEN.Easing.Quadratic.InOut) 
-		        .onUpdate(function() {
-					window.scrollTo(currentTop,coords.y);
-		        })
-		        .start(); 
-
-			
-			}
-		}
-
-		var mySwiper = new Swiper ('.swiper-container', {
-    loop: true,
-    
-    // 如果需要分页器
-    pagination: {
-      el: '.swiper-pagination',
-    },
-    
-    // 如果需要前进后退按钮
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    }
-    
-  })        
-</script>
+<!--模块化-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.1.1/Tween.min.js"></script>
+<script src="js/swiper.min.js"></script>
+<script src="js/init-swiper.js"></script>
+<script src="js/auto-slide-up.js"></script>
+<script src="js/static-topBar.js"></script>
+<script src="js/topNav-secondList-toggle.js"></script>
+<script src="js/smoothly-navigation.js"></script>
 </html>
