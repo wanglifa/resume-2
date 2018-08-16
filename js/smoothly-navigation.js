@@ -1,6 +1,6 @@
 !function(){
 	//smoothly-navigation平滑导航
-	var view = document.querySelector('nav ul');
+	var view = View('nav ul');
 	var controller = {
 		view: null,
 		init: function(view){
